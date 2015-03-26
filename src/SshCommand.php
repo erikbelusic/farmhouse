@@ -1,4 +1,4 @@
-<?php namespace Laravel\Homestead;
+<?php namespace Laravel\Farmhouse;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Command\Command;
@@ -15,7 +15,7 @@ class SshCommand extends Command {
 	protected function configure()
 	{
 		$this->setName('ssh')
-                  ->setDescription('Login to the Homestead machine via SSH');
+                  ->setDescription('Login to the Farmhouse machine via SSH');
 	}
 
 	/**

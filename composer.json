@@ -1,5 +1,5 @@
 {
-    "name": "laravel/homestead",
+    "name": "laravel/farmhouse",
     "description": "A virtual machine for web artisans.",
     "require": {
         "php": ">=5.4",
@@ -15,10 +15,10 @@
     ],
     "autoload": {
         "psr-4": {
-            "Laravel\\Homestead\\": "src/"
+            "Laravel\\Farmhouse\\": "src/"
         }
     },
     "bin": [
-        "homestead"
+        "farmhouse"
     ]
 }

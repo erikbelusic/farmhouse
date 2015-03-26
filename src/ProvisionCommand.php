@@ -1,4 +1,4 @@
-<?php namespace Laravel\Homestead;
+<?php namespace Laravel\Farmhouse;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Command\Command;
@@ -15,7 +15,7 @@ class ProvisionCommand extends Command {
 	protected function configure()
 	{
 		$this->setName('provision')
-			->setDescription('Re-provisions the Homestead machine');
+			->setDescription('Re-provisions the Farmhouse machine');
 	}
 
 	/**

@@ -1,4 +1,4 @@
-<?php namespace Laravel\Homestead;
+<?php namespace Laravel\Farmhouse;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Command\Command;
@@ -15,7 +15,7 @@ class EditCommand extends Command {
 	protected function configure()
 	{
 		$this->setName('edit')
-                  ->setDescription('Edit the Homestead.yaml file');
+                  ->setDescription('Edit the Farmhouse.yaml file');
 	}
 
 	/**
@@ -27,7 +27,7 @@ class EditCommand extends Command {
 	 */
 	public function execute(InputInterface $input, OutputInterface $output)
 	{
-		$command = $this->executable().' '.homestead_path().'/Homestead.yaml';
+		$command = $this->executable().' '.farmhouse_path().'/Farmhouse.yaml';
 
 		$process = new Process($command, realpath(__DIR__.'/../'), array_merge($_SERVER, $_ENV), null, null);
 

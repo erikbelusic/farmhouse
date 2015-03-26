@@ -1,4 +1,4 @@
-<?php namespace Laravel\Homestead;
+<?php namespace Laravel\Farmhouse;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Command\Command;
@@ -16,7 +16,7 @@ class UpCommand extends Command {
 	protected function configure()
 	{
 		$this->setName('up')
-                  ->setDescription('Start the Homestead machine')
+                  ->setDescription('Start the Farmhouse machine')
 				  ->addOption('provision', null, InputOption::VALUE_NONE, 'Run the provisioners on the box.');
 	}
 

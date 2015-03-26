@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/.homestead
+mkdir -p ~/.farmhouse
 
-homesteadRoot=~/.homestead
+farmhouseRoot=~/.farmhouse
 
-cp -i src/stubs/Homestead.yaml $homesteadRoot/Homestead.yaml
-cp -i src/stubs/after.sh $homesteadRoot/after.sh
-cp -i src/stubs/aliases $homesteadRoot/aliases
+cp -i src/stubs/Farmhouse.yaml $farmhouseRoot/Farmhouse.yaml
+cp -i src/stubs/after.sh $farmhouseRoot/after.sh
+cp -i src/stubs/aliases $farmhouseRoot/aliases
 
-echo "Homestead initialized!"
+echo "Farmhouse initialized!"

@@ -1,4 +1,4 @@
-<?php namespace Laravel\Homestead;
+<?php namespace Laravel\Farmhouse;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Command\Command;
@@ -15,7 +15,7 @@ class SuspendCommand extends Command {
 	protected function configure()
 	{
 		$this->setName('suspend')
-                  ->setDescription('Suspend the Homestead machine');
+                  ->setDescription('Suspend the Farmhouse machine');
 	}
 
 	/**

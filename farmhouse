@@ -1,0 +1,43 @@
+#!/usr/bin/env php
+<?php
+
+$_ENV['HOME'] = getenv('HOME');
+$_ENV['VAGRANT_DOTFILE_PATH'] = farmhouse_path().DIRECTORY_SEPARATOR.'.vagrant';
+
+if (file_exists(__DIR__.'/vendor/autoload.php'))
+{
+	require __DIR__.'/vendor/autoload.php';
+}
+else
+{
+	require __DIR__.'/../../autoload.php';
+}
+
+function farmhouse_path()
+{
+	if (isset($_SERVER['HOME']))
+	{
+		return $_SERVER['HOME'].'/.farmhouse';
+	}
+	else
+	{
+		return $_SERVER['HOMEDRIVE'].$_SERVER['HOMEPATH'].DIRECTORY_SEPARATOR.'.farmhouse';
+	}
+}
+
+$app = new Symfony\Component\Console\Application('Laravel Farmhouse', '2.0.14');
+
+$app->add(new Laravel\Farmhouse\DestroyCommand);
+$app->add(new Laravel\Farmhouse\EditCommand);
+$app->add(new Laravel\Farmhouse\HaltCommand);
+$app->add(new Laravel\Farmhouse\InitCommand);
+$app->add(new Laravel\Farmhouse\ProvisionCommand);
+$app->add(new Laravel\Farmhouse\ResumeCommand);
+$app->add(new Laravel\Farmhouse\RunCommand);
+$app->add(new Laravel\Farmhouse\UpCommand);
+$app->add(new Laravel\Farmhouse\UpdateCommand);
+$app->add(new Laravel\Farmhouse\SshCommand);
+$app->add(new Laravel\Farmhouse\StatusCommand);
+$app->add(new Laravel\Farmhouse\SuspendCommand);
+
+$app->run();

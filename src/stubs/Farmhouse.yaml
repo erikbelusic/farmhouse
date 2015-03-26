@@ -14,11 +14,11 @@ folders:
       to: /home/vagrant/Code
 
 sites:
-    - map: homestead.app
+    - map: farmhouse.app
       to: /home/vagrant/Code/Laravel/public
 
 databases:
-    - homestead
+    - farmhouse
 
 variables:
     - key: APP_ENV
