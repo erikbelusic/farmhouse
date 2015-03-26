@@ -4,7 +4,7 @@ class Farmhouse
     ENV['VAGRANT_DEFAULT_PROVIDER'] = settings["provider"] ||= "virtualbox"
 
     # Configure The Box
-    config.vm.box = "laravel/farmhouse"
+    config.vm.box = "laravel/homestead"
     config.vm.hostname = "farmhouse"
 
     # Configure A Private Network IP
