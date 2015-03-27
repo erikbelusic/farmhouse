@@ -8,7 +8,7 @@ class Farmhouse
     config.vm.hostname = "farmhouse"
 
     # Configure A Private Network IP
-    config.vm.network :private_network, ip: settings["ip"] ||= "192.168.10.10"
+    config.vm.network :private_network, ip: settings["ip"] ||= "192.168.10.11"
 
     # Configure A Few VirtualBox Settings
     config.vm.provider "virtualbox" do |vb|
