@@ -150,5 +150,21 @@ class Farmhouse
       config.hostsupdater.aliases = hosts
       config.hostsupdater.remove_on_suspend = true
     end
+
+    # /srv/database/
+    #
+    # If a database directory exists in the same directory as your Vagrantfile,
+    # a mapped directory inside the VM will be created that contains these files.
+    # This directory is used to maintain default database scripts as well as backed
+    # up mysql dumps (SQL files) that are to be imported automatically on vagrant up
+    config.vm.synced_folder "database/", "/srv/database"
+
+    # /srv/config/
+    #
+    # If a server-conf directory exists in the same directory as your Vagrantfile,
+    # a mapped directory inside the VM will be created that contains these files.
+    # This directory is currently used to maintain default config files for provisioning.
+    config.vm.synced_folder "config/", "/srv/config"
+  
   end
 end
