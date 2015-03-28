@@ -16,3 +16,5 @@ function serve() {
 	fi
 }
 
+# Farmhouse aliases
+alias artisan='php artisan'
