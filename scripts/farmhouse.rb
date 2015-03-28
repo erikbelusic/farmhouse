@@ -165,6 +165,27 @@ class Farmhouse
     # a mapped directory inside the VM will be created that contains these files.
     # This directory is currently used to maintain default config files for provisioning.
     config.vm.synced_folder "config/", "/srv/config"
+
+    # Vagrant Triggers
+    #
+    # If the vagrant-triggers plugin is installed, we can run various scripts on Vagrant
+    # state changes like `vagrant up`, `vagrant halt`, `vagrant suspend`, and `vagrant destroy`
+    #
+    # These scripts are run on the host machine, so we use `vagrant ssh` to tunnel back
+    # into the VM and execute things. By default, each of these scripts calls db_backup
+    # to create backups of all current databases. This can be overridden with custom
+    # scripting. See the individual files in config/homebin/ for details.
+    if defined? VagrantPlugins::Triggers
+      config.trigger.before :halt, :stdout => true do
+        run "vagrant ssh -c 'vagrant_halt'"
+      end
+      config.trigger.before :suspend, :stdout => true do
+        run "vagrant ssh -c 'vagrant_suspend'"
+      end
+      config.trigger.before :destroy, :stdout => true do
+        run "vagrant ssh -c 'vagrant_destroy'"
+      end
+    end
   
   end
 end
