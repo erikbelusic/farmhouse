@@ -1,6 +1,6 @@
 {
     "name": "belusic/farmhouse",
-    "description": "A EXTENDED virtual machine for web artisans.",
+    "description": "A EXTENDED virtual machine for web artisans based on laravel/homestead.",
     "require": {
         "php": ">=5.4",
         "symfony/console": "~2.0",
